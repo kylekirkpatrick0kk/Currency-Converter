@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Price Conversion</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Price Fetcher</h1>
+    <button id="fetchPriceButton">Fetch</button>
+    <div id="resultContainer">
+      <h3>Price of BTC:</h3>
+      <input type="text" id="btcPrice" readonly>
+    </div>
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
