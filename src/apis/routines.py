@@ -7,8 +7,12 @@ class ApiRoutines:
 
     def filter_data(self):
         self.log.debug("Filtering Data!")
-        data = get_coinmarketcap_data()
-        #data = get_metalprice_data()
-        btc_price = data.get("data")[0].get("quote").get("USD").get("price")
-        price_dict = {"btc_price": btc_price}
+        coin_market_data = get_coinmarketcap_data()
+        metal_market_data = get_metalprice_data()
+        print(metal_market_data)
+        btc_price = coin_market_data.get("data")[0].get("quote").get("USD").get("price")
+        gold_price = 1/float(metal_market_data.get("rates").get("XAU"))
+        gold_price = str(gold_price)
+        price_dict = {"btc_price": btc_price,
+                      "gold_price": gold_price}
         return price_dict
