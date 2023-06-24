@@ -22,4 +22,4 @@ class CoinMarketCapData(APIView):
 
 class CoinMarketView(View):
     def get(self, request):
-        return render(request, "index.html")
+        return render(request, "price_fetcher.html")
