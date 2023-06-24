@@ -9,7 +9,6 @@ class ApiRoutines:
         self.log.debug("Filtering Data!")
         coin_market_data = get_coinmarketcap_data()
         metal_market_data = get_metalprice_data()
-        print(metal_market_data)
         btc_price = coin_market_data.get("data")[0].get("quote").get("USD").get("price")
         gold_price = 1/float(metal_market_data.get("rates").get("XAU"))
         gold_price = str(gold_price)
