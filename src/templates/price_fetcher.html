@@ -16,6 +16,14 @@
       <h3>Price of 1 Troy Ounce of Gold:</h3>
       <input type="text" id="goldPrice" readonly>
     </div>
+    <h1>Conversion</h1>
+    <div id="conversionContainer">
+      <input type="text" id="goldPriceConvert" placeholder="Enter amount in oz t">
+      <span id="goldUnit">oz t</span>
+      <span>&#8644;</span>
+      <input type="text" id="btcPriceConvert" placeholder="Converted amount in BTC">
+      <span id="btcUnit">BTC</span>
+    </div>
   </div>
 
   <script src="{% static 'price_fetcher.js' %}"></script>

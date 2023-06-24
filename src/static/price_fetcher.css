@@ -1,29 +1,49 @@
 .container {
-    text-align: center;
-    margin-top: 100px;
-  }
-  
-  #resultContainer {
-    margin-top: 30px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: solid;
-    border-color: darkgreen;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    width: 300px;
-    margin-bottom: 10px;
-  }
-  
+  text-align: center;
+  margin-top: 100px;
+}
+
+#resultContainer {
+  margin-top: 30px;
+}
+
+h1 {
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#goldUnit,
+#btcUnit {
+  font-size: 18px;
+  margin-left: 10px;
+  color: #666;
+}
+
+#conversionContainer span {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #999;
+}
