@@ -18,11 +18,17 @@
     </div>
     <h1>Conversion</h1>
     <div id="conversionContainer">
-      <input type="text" id="goldPriceConvert" placeholder="Enter amount in oz t">
-      <span id="goldUnit">oz t</span>
+      <input type="text" id="convertFromValue" placeholder="Enter value">
+      <select id="convertFromUnit">
+        <option value="gold">oz t</option>
+        <option value="btc">BTC</option>
+      </select>
       <span>&#8644;</span>
-      <input type="text" id="btcPriceConvert" placeholder="Converted amount in BTC">
-      <span id="btcUnit">BTC</span>
+      <input type="text" id="convertToValue" readonly>
+      <select id="convertToUnit">
+        <option value="gold">oz t</option>
+        <option value="btc">BTC</option>
+      </select>
     </div>
   </div>
 
