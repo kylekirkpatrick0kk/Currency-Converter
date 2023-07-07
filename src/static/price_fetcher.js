@@ -29,13 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
     var convertToUnit = convertToUnitSelect.value;
     var btcPrice = parseFloat(btcPriceInput.value);
     var goldPrice = parseFloat(goldPriceInput.value);
+    var dollarToBtcRate = 1 / btcPrice;
+    var dollarToGoldRate = 1 / goldPrice;
 
     var convertedValue;
 
     if (convertFromUnit === 'gold' && convertToUnit === 'btc') {
       convertedValue = (convertFromValue * goldPrice / btcPrice).toFixed(8);
+    } else if (convertFromUnit === 'gold' && convertToUnit === 'dollar') {
+      convertedValue = (convertFromValue * goldPrice).toFixed(2);
     } else if (convertFromUnit === 'btc' && convertToUnit === 'gold') {
       convertedValue = (convertFromValue * btcPrice / goldPrice).toFixed(2);
+    } else if (convertFromUnit === 'btc' && convertToUnit === 'dollar') {
+      convertedValue = (convertFromValue * dollarToBtcRate).toFixed(2);
+    } else if (convertFromUnit === 'dollar' && convertToUnit === 'gold') {
+      convertedValue = (convertFromValue * dollarToGoldRate).toFixed(2);
+    } else if (convertFromUnit === 'dollar' && convertToUnit === 'btc') {
+      convertedValue = (convertFromValue * dollarToBtcRate).toFixed(8);
     } else {
       // If the units are the same, set the converted value equal to the entered value
       convertedValue = convertFromValue;

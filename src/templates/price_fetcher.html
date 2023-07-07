@@ -4,7 +4,7 @@
 <html>
 <head>
   <title>Price Conversion</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'price_fetcher.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'price_fetcher_dark_mode.css' %}">
 </head>
 <body>
   <div class="container">
@@ -12,9 +12,9 @@
     <button id="fetchPriceButton">Fetch</button>
     <div id="resultContainer">
       <h3>Price of 1 BTC:</h3>
-      <input type="text" id="btcPrice" readonly>
+      &dollar;<input type="text" id="btcPrice" readonly>
       <h3>Price of 1 Troy Ounce of Gold:</h3>
-      <input type="text" id="goldPrice" readonly>
+      &dollar;<input type="text" id="goldPrice" readonly>
     </div>
     <h1>Conversion</h1>
     <div id="conversionContainer">
@@ -22,12 +22,14 @@
       <select id="convertFromUnit">
         <option value="gold">oz t</option>
         <option value="btc">BTC</option>
+        <option value="dollar">USD</option>
       </select>
       <span>&#8644;</span>
       <input type="text" id="convertToValue" readonly>
       <select id="convertToUnit">
         <option value="gold">oz t</option>
         <option value="btc">BTC</option>
+        <option value="dollar">USD</option>
       </select>
     </div>
   </div>
