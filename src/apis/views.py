@@ -4,15 +4,22 @@ import logging
 from typing import Any
 from django.shortcuts import render
 
-from rest_framework.views import APIView
+from rest_framework.views import View, APIView
 from rest_framework.response import Response
-from apis.utils.crypto_api import get_coinmarketcap_data
+
+from .routines import ApiRoutines
+
 
 class CoinMarketCapData(APIView):
     def __init__(self, **kwargs: Any) -> None:
         self.log = logging.getLogger(f"{__name__}.CoinMarketCapData")
     
     def get(self, request):
-        data = get_coinmarketcap_data()
         self.log.debug("Get request from CoinMarketCapData API View.")
-        return Response(data)
+        filtered_response = ApiRoutines().filter_data()
+        return Response(filtered_response)
+    
+
+class CoinMarketView(View):
+    def get(self, request):
+        return render(request, "price_fetcher.html")
